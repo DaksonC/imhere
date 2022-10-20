@@ -1,16 +1,49 @@
 import { 
+  Alert,
+  FlatList,
+  ScrollView,
   Text, 
   TextInput, 
   TouchableOpacity, 
   View
 } from 'react-native';
-import { Participant } from '../../components/Participant';
 import { styles } from './styles';
+import { Participant } from '../../components/Participant';
 
 export function Home() {
+  const participants = [
+    "Fulano", 
+    "Ciclano", 
+    "Beltrano",
+    "Ana",
+    "Maria",
+    "Joana",
+    "José",
+    "João",
+    "Pedro",
+    "Paulo",
+  ];
+
   function hendleParticipandAdd() {
-    console.log('Vc clicou no botão!');
+    console.log('Vc clicou no botão ADD!');
   }
+
+  function handleParticipantRemove(name: string) {
+    Alert.alert(
+      'Vc clicou no botão REMOVE!', 
+      `Deseja realmente remover o participante ${name}?`,[
+      { 
+        text: 'Sim', 
+        onPress: () => Alert.alert('Participante removido com sucesso!') 
+      },
+      {
+        text: 'Não',
+        style: 'cancel'
+      }
+    ]);
+    console.log('Vc clicou no botão REMOVE!');
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>
@@ -34,9 +67,23 @@ export function Home() {
         </Text>
       </TouchableOpacity>
       </View>
-      <Participant />
-      <Participant />
-      <Participant />
+      <FlatList 
+        data={participants}
+        keyExtractor={item => item}
+        renderItem={({ item }) => (
+          <Participant 
+            key={item}
+            name={item}
+            onRemove={() => handleParticipantRemove(item)}
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => (
+          <Text style={styles.emptyList}>
+            Nenhum participante adicionado
+          </Text>
+        )}
+      />
     </View>
   )
 }
