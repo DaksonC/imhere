@@ -9,32 +9,34 @@ import {
 } from 'react-native';
 import { styles } from './styles';
 import { Participant } from '../../components/Participant';
+import { useState } from 'react';
 
 export function Home() {
-  const participants = [
-    "Fulano", 
-    "Ciclano", 
-    "Beltrano",
-    "Ana",
-    "Maria",
-    "Joana",
-    "José",
-    "João",
-    "Pedro",
-    "Paulo",
-  ];
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState("");
 
   function hendleParticipandAdd() {
-    console.log('Vc clicou no botão ADD!');
+    if (participants.includes(participantName)) {
+      Alert.alert("Participante já adicionado", "Já existe um participante com esse nome");
+      return;
+    }
+    setParticipants(prevState => [...prevState, participantName]);
+    setParticipantName("");
   }
 
   function handleParticipantRemove(name: string) {
+        
     Alert.alert(
       'Vc clicou no botão REMOVE!', 
       `Deseja realmente remover o participante ${name}?`,[
       { 
         text: 'Sim', 
-        onPress: () => Alert.alert('Participante removido com sucesso!') 
+        onPress: () => 
+          setParticipants(
+            prevState => prevState.filter(
+              participant => participant !== name
+            )
+          ),
       },
       {
         text: 'Não',
@@ -57,6 +59,8 @@ export function Home() {
         style={styles.input} 
         placeholder="Nome do participante" 
         placeholderTextColor="#9E9E9E"
+        onChangeText={setParticipantName}
+        value={participantName}
       />
       <TouchableOpacity 
         style={styles.button}
