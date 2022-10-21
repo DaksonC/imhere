@@ -9,12 +9,12 @@ Projeto do curso ignite da Rocketseat Fundamentos de React Native e TypeScript.
 -          yarn
 -          yarn start
 
-## tecnologias
+## Tecnologias
 
 - React Native
 - TypeScript
 
-### PreView
+## PreView
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/81385265/197097126-397d5382-bbfe-489a-a584-946e9beedb32.png" />
