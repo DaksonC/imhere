@@ -17,7 +17,7 @@ Projeto do curso ignite da Rocketseat Fundamentos de React Native e TypeScript.
 ### PreView
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/81385265/197092867-1c19f35e-dd90-4560-970a-a60ffc2f6d2c.png" />
+<img src="https://user-images.githubusercontent.com/81385265/197097126-397d5382-bbfe-489a-a584-946e9beedb32.png" />
 </div>
 <hr />
 <div align="center">
