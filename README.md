@@ -9,15 +9,13 @@ https://user-images.githubusercontent.com/81385265/197093164-ffc13552-6ac3-42c6-
 
 ## Instalação e execução do projeto
 
--          git clone https://github.com/DaksonC/desafio-acelera-jovem.git
--          cd desafio-acelera-jovem
+-          git clone https://github.com/DaksonC/imhere.git
+-          cd imhere
 -          yarn
--          yarn dev
+-          yarn start
 
 ## tecnologias
 
-- React
+- React Native
 - TypeScript
-- Chakra Ui
-- Axios
-- Vite
+
