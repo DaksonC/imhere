@@ -15,7 +15,7 @@ Projeto do curso ignite da Rocketseat Fundamentos de React Native e TypeScript.
 - TypeScript
 - Android Studio
 
-## PreView
+## PreView [link](https://www.loom.com/share/51630561485d4ee7b223ab912f2ad74a)
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/81385265/197097126-397d5382-bbfe-489a-a584-946e9beedb32.png" />
